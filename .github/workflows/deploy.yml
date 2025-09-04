@@ -13,16 +13,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .   # Upload entire site
-
-      - name: Deploy
-        uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: . }
+      - uses: actions/deploy-pages@v4
